@@ -16,3 +16,17 @@ form.login_form {
     border-radius: 5px;
     padding: 10px;
 }
+
+.label {
+    background-image: url('../img/label.png');
+    width: 600px;
+    height: 400px;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+h4 {
+    color: #d22e3a;
+    margin-left:20px
+}
