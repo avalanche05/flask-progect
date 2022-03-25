@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости</title>
+</head>
+<body>
+{% for item in info %}
+<h2>{{item}} - Каюта №{{loop.index}}
+    {% if loop.first %}
+    - капитан корабля
+    {% endif %}
+</h2>
+{% endfor %}
+</body>
+</html>

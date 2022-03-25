@@ -48,6 +48,11 @@ def login():
     return render_template('login.html', title='Авторизация', form=form)
 
 
+@app.route('/distribution')
+def distribution():
+    return render_template('distribution.html', info=['Ваня', 'Миша'][::-1])
+
+
 @app.route('/answer')
 @app.route('/auto_answer')
 def answer():
