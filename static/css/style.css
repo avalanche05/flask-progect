@@ -18,15 +18,15 @@ form.login_form {
 }
 
 .label {
-    background-image: url('../img/label.png');
-    width: 600px;
-    height: 400px;
-    background-position: center;
-    -webkit-background-size: cover;
-    background-size: cover;
+    background-image: url('../img/logo.png');
+    width: 150px;
+    height: 50px;
+    padding-left: 150px;
+
 }
+
 
 h4 {
     color: #d22e3a;
-    margin-left:20px
+    margin-left: 20px
 }

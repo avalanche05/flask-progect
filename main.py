@@ -53,7 +53,7 @@ def login():
 def answer():
     data = dict()
     data['title'] = 'название'
-    data['lastname'] = 'Ilin'
+    data['lastname'] = 'Ильин'
     data['firstname'] = 'Ivan'
     data['education'] = 'education'
     data['profession'] = 'profession'
