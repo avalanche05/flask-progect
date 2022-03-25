@@ -69,5 +69,11 @@ def answer():
     return render_template('auto_answer.html', **data)
 
 
+@app.route('/table/<sex>/<int:age>')
+def table(sex: str, age: int):
+    return render_template('table.html', sex=sex, age=age,
+                           image_path=url_for('static', filename='img/mars.png'))
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
