@@ -3,11 +3,16 @@
 {% block content %}
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-        {% for item in links %}
+        {% for elem in links %}
+        {% if loop.first %}
         <div class="carousel-item active">
-            <img src="{{ item }}"
-                 class="d-block w-100" alt="...">
+            <img src="{{ elem }}" class="d-block w-100" alt="...">
         </div>
+        {% else %}
+        <div class="carousel-item">
+            <img src="{{ elem }}" class="d-block w-100" alt="...">
+        </div>
+        {% endif %}
         {% endfor %}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"

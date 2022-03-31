@@ -1,8 +1,11 @@
+import json
 import os
+import random
 
 from PIL import Image
 from flask import Flask, url_for, request, render_template, redirect
 
+from Member import Member
 from loginform import LoginForm
 
 app = Flask(__name__)
@@ -90,5 +93,23 @@ def galery():
     return render_template('galery.html', links=links)
 
 
+@app.route('/members')
+def members():
+    members = json.load(open('templates/members.json'))
+    return render_template('members.html', member=random.choice(members))
+
+
+def generate_members():
+    ivan = Member('Ivan', 'Ilin', '',
+                  ['актёр', 'программист', 'певец', 'пианист', 'одним словом, балабол'])
+    mikhail = Member('Mikhail', 'Glazov', '',
+                     ['Гид по Канашу', 'спидкубер'])
+
+    members = [ivan, mikhail]
+    with open('templates/members.json', 'w') as cat_file:
+        json.dump(members, cat_file, default=lambda o: o.__dict__)
+
+
+generate_members()
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 align="center">{{member.firstname}} {{member.lastname}}</h1>
+
+<h5>
+    {% for elem in member.profession_list %}
+    {{ elem }},
+    {% endfor %}
+</h5>
+
+{% endblock %}
