@@ -1,3 +1,6 @@
+import os
+
+from PIL import Image
 from flask import Flask, url_for, request, render_template, redirect
 
 from loginform import LoginForm
@@ -73,6 +76,18 @@ def answer():
 def table(sex: str, age: int):
     return render_template('table.html', sex=sex, age=age,
                            image_path=url_for('static', filename='img/mars.png'))
+
+
+@app.route('/galery', methods=['POST', 'GET'])
+def galery():
+    if request.method == 'POST':
+        f = request.files['file']
+        image = Image.open(f)
+        image.save(f'static/img/carousel/{hash(f)}.png')
+
+    links = [url_for('static', filename=f'img/carousel/{t}') for t in
+             os.listdir('static/img/carousel')]
+    return render_template('galery.html', links=links)
 
 
 if __name__ == '__main__':
