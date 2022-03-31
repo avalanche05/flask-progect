@@ -3,6 +3,7 @@
 {% block content %}
 <h1 align="center">{{member.firstname}} {{member.lastname}}</h1>
 
+<img src="{{ member.photo_link  }}" class="d-block w-100" width="200" height="500" alt="...">
 <h5>
     {% for elem in member.profession_list %}
     {{ elem }},

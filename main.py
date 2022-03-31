@@ -100,9 +100,9 @@ def members():
 
 
 def generate_members():
-    ivan = Member('Ivan', 'Ilin', '',
+    ivan = Member('Ivan', 'Ilin', 'static/img/members/photo_2021-11-13_21-32-15.jpg',
                   ['актёр', 'программист', 'певец', 'пианист', 'одним словом, балабол'])
-    mikhail = Member('Mikhail', 'Glazov', '',
+    mikhail = Member('Mikhail', 'Glazov', 'static/img/members/photo_2021-06-21_20-21-04.jpg',
                      ['Гид по Канашу', 'спидкубер'])
 
     members = [ivan, mikhail]
