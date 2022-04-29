@@ -77,8 +77,20 @@ def answer():
 
 @app.route('/table/<sex>/<int:age>')
 def table(sex: str, age: int):
+    if sex == 'male' and age < 21:
+        color_filename = 'men_young.png'
+    elif sex == 'male' and age >= 21:
+        color_filename = 'men_old.png'
+    elif sex == 'female' and age < 21:
+        color_filename = 'women_young.png'
+    else:
+        color_filename = 'women_old.png'
+
+    color_link = url_for('static', filename=f'img/colors/{color_filename}')
+    old_link = url_for('static', filename=f'img/profiles/{"baby.png" if age < 21 else "man.png"}')
     return render_template('table.html', sex=sex, age=age,
-                           image_path=url_for('static', filename='img/mars.png'))
+                           color_image_path=color_link,
+                           profile_image_path=old_link)
 
 
 @app.route('/galery', methods=['POST', 'GET'])
